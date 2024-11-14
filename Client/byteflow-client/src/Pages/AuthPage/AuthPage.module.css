@@ -86,7 +86,7 @@
 }
 .links .link:hover{
     text-decoration: underline;
-    cursor: cell;
+    cursor: pointer;
 }
 .slide_login{
 

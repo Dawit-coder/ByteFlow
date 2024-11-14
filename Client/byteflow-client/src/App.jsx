@@ -7,7 +7,7 @@ import axios from "./axiosConfig";
 export const Appstate = createContext();
 
 function App() {
-  const [user, setuser] = useState([]);
+  const [user, setUser] = useState({});
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
   async function checkUser() {
@@ -17,9 +17,10 @@ function App() {
           Authorization: "Bearer " + token,
         },
       });
-      setuser(data);
+      console.log(data)
+      setUser(data);
     } catch (error) {
-      console.log(error.response);
+      console.log('error in checking user', error.response);
       navigate("/login");
     }
   }
@@ -27,7 +28,7 @@ function App() {
     checkUser();
   }, []);
   return (
-    <Appstate.Provider value={{ user, setuser }}>
+    <Appstate.Provider value={{ user, setUser }}>
       <Routes>
         <Route path="/" element={<Home />} />
         {/* <Route path='/login' element={<Login/>} /> */}

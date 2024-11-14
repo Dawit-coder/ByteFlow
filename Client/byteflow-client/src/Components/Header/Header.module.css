@@ -1,0 +1,33 @@
+.header_container{
+
+    /* background-color: #f7f3e9; */
+    background-color: #A6B1B7;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.inner_container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 20px;
+}
+.inner_container a img{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100px;
+    width: auto;
+}
+.nav{
+    display: flex;
+    gap: 50px;
+    padding-right: 70px;
+}
+.nav a{
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+    transition: .3s ease-in-out;
+}
+.nav a:hover{
+    transform: scale(1.1);
+}

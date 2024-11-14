@@ -3,7 +3,6 @@ import axios from '../../axiosConfig'
 import { useNavigate } from 'react-router-dom';
 import styles from './AuthForm.module.css'
 
-
 function Register() {
   const navigate = useNavigate();
 
@@ -34,11 +33,8 @@ function Register() {
         email: emailvalue,
         password: passwordvalue,
       })
-
       alert("registered successfully")
-
       navigate("/login")
-
     } catch (error) {
       alert('something went wrong')
       console.log(error)

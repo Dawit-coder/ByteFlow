@@ -18,16 +18,15 @@ function Login() {
       return alert("provide the required values")
     }
     try {
-      const { data } = await axios.post('/users/register', {
+      const { data } = await axios.post('/users/login', {
         email: emailvalue,
         password: passwordvalue,
       })
       alert("login successfully completed")
-      localStorage.setItem("token", data.token)
+      localStorage.setItem("token", data.token);
       navigate("/")
-
     } catch (error) {
-      alert(error?.response?.data?.msg)
+      alert('login error', error?.response?.data?.msg)
     }
   }
   return (
