@@ -1,0 +1,41 @@
+.container {
+    background-color: #fff;
+    padding: 15px;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+  
+.content {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px 0;
+}
+  
+.contact, .service, .social {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+  
+h3 {
+    padding-bottom: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+  
+a{
+    text-decoration: none;
+    color: black;
+}
+  
+a:hover {
+    text-decoration: underline;
+}
+  
+  .copyright {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 20px;
+  }
+  
