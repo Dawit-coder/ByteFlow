@@ -1,16 +1,22 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import styles from './Home.module.css'
 import { Appstate } from '../../App'
-import Header from '../../Components/Header/Header'
-import Footer from '../../Components/Footer/Footer'
+import Layout from '../../Components/Layout/Layout'
+import PopupModel from '../../Components/PopupModel/PopupModel'
 
 function Home() {
-  const {user} = useContext(Appstate)
+  const { user } = useContext(Appstate)
+  const [showPopup, setShowPopup] = useState(false);
+
+
   return (
-    <div>
-      <Header/>
-      <Footer/>
-    </div>
+    <Layout>
+      <div className={`${showPopup ? styles.blurred : ""}`}>
+        <h2>Home page</h2>
+        <button onClick={()=>setShowPopup(true)} className={styles.question_btn}>Ask Question</button>
+      </div>
+      { showPopup && <PopupModel onClose={()=>setShowPopup(false)}/> }
+    </Layout>
   )
 }
 

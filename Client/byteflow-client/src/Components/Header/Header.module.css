@@ -10,6 +10,22 @@
     justify-content: space-between;
     padding: 5px 20px;
 }
+.inner_container button{
+    position: relative;
+    left: 23%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background-color: #101010;
+    color: #fff;
+    border-radius: 10px;
+    transition: .2 ease-in;
+}
+.inner_container button:hover{
+    cursor: pointer;
+    color: black;
+    background-color: silver;
+}
 .inner_container a img{
     background-position: center;
     background-repeat: no-repeat;

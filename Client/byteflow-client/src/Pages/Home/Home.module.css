@@ -1,0 +1,22 @@
+.question_btn{
+    position: sticky;
+    left: 85%;
+    margin: 40px;
+    padding: 15px;
+    background-color: #11998E;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+}
+.question_btn:hover{
+    cursor: pointer;
+    background-color: transparent;
+    border:2px solid #11998E;
+    color: black;
+}
+.blurred{
+    filter: blur(1px);
+    transition: filter 0.3s ease;
+}

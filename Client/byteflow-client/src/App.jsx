@@ -31,7 +31,6 @@ function App() {
     <Appstate.Provider value={{ user, setUser }}>
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* <Route path='/login' element={<Login/>} /> */}
         <Route path="/register" element={<AuthPage defaultform="register" />} />
         <Route path="/login" element={<AuthPage defaultform="login" />} />
       </Routes>

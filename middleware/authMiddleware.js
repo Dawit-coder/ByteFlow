@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 async function authMiddleware(req, res, next){
 
     const authHeader = req.headers.authorization
-    console.log(authHeader)
+    // console.log(authHeader)
 
     if (!authHeader || !authHeader.startsWith("Bearer")) {
         return res.status(StatusCodes.UNAUTHORIZED).json({ msg:"Authentication invalid" })

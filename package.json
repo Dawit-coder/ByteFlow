@@ -15,6 +15,7 @@
     "express": "^4.21.1",
     "http-status-codes": "^2.3.0",
     "jsonwebtoken": "^9.0.2",
+    "lucide-react": "^0.460.0",
     "mysql2": "^3.11.3",
     "react-router-dom": "^6.27.0"
   }
