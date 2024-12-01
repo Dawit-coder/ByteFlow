@@ -1,10 +1,10 @@
 const express = require("express")
+const { StatusCodes } = require("http-status-codes")
 const router = express.Router()
 
-//Authentication middleware
+const { askQuestion } = require("../controller/questionController");
 
-router.get("./all-questions", (req, res)=>{
-    res.send("all questions")
-})
+//Authentication middleware
+router.post("/ask-question", askQuestion)
 
 module.exports = router

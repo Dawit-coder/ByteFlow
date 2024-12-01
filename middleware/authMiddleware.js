@@ -1,11 +1,10 @@
 const { StatusCodes } = require("http-status-codes")
 const jwt = require("jsonwebtoken");
 async function authMiddleware(req, res, next){
-
-    const authHeader = req.headers.authorization
-    // console.log(authHeader)
+    const authHeader = req.headers.authorization;
 
     if (!authHeader || !authHeader.startsWith("Bearer")) {
+        console.log("Authorization header missing or invalid formate")
         return res.status(StatusCodes.UNAUTHORIZED).json({ msg:"Authentication invalid" })
     }
     const token = authHeader.split(" ")[1]

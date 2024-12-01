@@ -11,7 +11,7 @@ app.use(cors())
 //db connection
 const dbconnection = require("./db/dbConfig")
 
-//Use Route middleware file
+//User Route middleware file
 const userRoutes = require("./routes/userRoute");
 
 //Use question route middleware file
@@ -27,10 +27,8 @@ app.use(express.json())
 //Use Route middleware 
 app.use("/api/users", userRoutes)
 
-
-
 //question Route middleware 
-app.use("/api/questions", authMiddleware , questionRoutes)
+app.use("/api/questions", authMiddleware, questionRoutes)
 
 //answer Route middleware file
 

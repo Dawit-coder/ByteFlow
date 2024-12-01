@@ -10,6 +10,7 @@ function App() {
   const [user, setUser] = useState({});
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
+  
   async function checkUser() {
     try {
       const { data } = await axios.get("/users/check", {
@@ -17,7 +18,6 @@ function App() {
           Authorization: "Bearer " + token,
         },
       });
-      console.log(data)
       setUser(data);
     } catch (error) {
       console.log('error in checking user', error.response);
