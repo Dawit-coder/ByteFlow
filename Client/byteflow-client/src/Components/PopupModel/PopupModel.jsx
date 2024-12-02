@@ -17,7 +17,7 @@ function PopupModel({onClose}) {
               Authorization: `Bearer ${token}`,
             },
           });
-          onclose(true)
+          onClose()
         } catch (err) {
           console.log("error posting question", err.value)
         }

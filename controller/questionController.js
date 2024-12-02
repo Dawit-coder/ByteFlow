@@ -19,5 +19,16 @@ const askQuestion = async (req, res) => {
         res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({msg: "Error ocured while asking question"})
     }
 }
+//To display questions all questions at Home page
+const getQuestions = async (req, res) => {
 
-module.exports = {askQuestion}
+    try {
+        const [response] = await dbconnection.query("SELECT id, questionid, userid, title, description FROM questions");
+        console.log(response)
+        return res.status(StatusCodes.OK).json({response})
+    } catch (error) {
+        res.status(500).json({msg:"error fetching question"})
+    }
+}
+
+module.exports = {askQuestion, getQuestions}

@@ -8,7 +8,6 @@ function Home() {
   const { user } = useContext(Appstate)
   const [showPopup, setShowPopup] = useState(false);
 
-
   return (
     <Layout>
       <div className={`${showPopup ? styles.blurred : ""}`}>
