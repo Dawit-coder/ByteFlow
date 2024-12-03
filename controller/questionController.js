@@ -19,7 +19,7 @@ const askQuestion = async (req, res) => {
         res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({msg: "Error ocured while asking question"})
     }
 }
-//To display questions all questions at Home page
+//Fetch questions from database
 const getQuestions = async (req, res) => {
 
     try {
