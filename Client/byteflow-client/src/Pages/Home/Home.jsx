@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import styles from './Home.module.css'
 import { Appstate } from '../../App'
 import Layout from '../../Components/Layout/Layout'
+import PersonPinIcon from '@mui/icons-material/PersonPin';
 import PopupModel from '../../Components/PopupModel/PopupModel'
 import axios from '../../axiosConfig'
 
@@ -29,19 +30,25 @@ function Home() {
   },[])
   return (
     <Layout>
+      { showPopup && <PopupModel onClose={()=>setShowPopup(false)}/> }
       <div className={`${showPopup ? styles.blurred : ""}`}>
         <h2>Home page</h2>
         <button onClick={()=>setShowPopup(true)} className={styles.question_btn}>Ask Question</button>
       </div>
-      <div>
+      <div className={styles.questions_container}>
+        <h1></h1>
         {questions.map((question) => (
-          <ul key={question.id}>
-            <h2>{question.title}</h2>
-            <h2>{question.description}</h2>
-          </ul>
+          <div key={question.id} className={styles.question_card}>
+            <div className={styles.avatar}>
+              <h4>user</h4>
+            </div>
+            <div className={styles.content}>
+              <h2>{question.title}</h2>
+              <p>{question.description}</p>
+            </div>
+          </div>
         ))}
       </div>
-      { showPopup && <PopupModel onClose={()=>setShowPopup(false)}/> }
     </Layout>
   )
 }

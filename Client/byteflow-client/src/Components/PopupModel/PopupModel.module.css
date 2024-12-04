@@ -1,9 +1,11 @@
 .container{
+    /* position: absolute; */
     display: flex;
     align-items: center;
     justify-content: center;
     /* margin: 70px; */
     padding: 70px;
+    /* z-index: 2; */
 }
 .popup_container{
     width: 60%;
