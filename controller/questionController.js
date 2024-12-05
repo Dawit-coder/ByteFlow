@@ -23,7 +23,7 @@ const askQuestion = async (req, res) => {
 const getQuestions = async (req, res) => {
 
     try {
-        const [response] = await dbconnection.query("SELECT id, questionid, userid, title, description FROM questions");
+        const [response] = await dbconnection.query("SELECT id, questionid, userid, title, description FROM questions ORDER BY id DESC");
         console.log(response)
         return res.status(StatusCodes.OK).json({response})
     } catch (error) {
@@ -31,4 +31,25 @@ const getQuestions = async (req, res) => {
     }
 }
 
-module.exports = {askQuestion, getQuestions}
+const QuestionDetail = async(req, res) => {
+    const { questionId } = req.params;
+    console.log(questionId)
+    try {
+        const [question] = await dbconnection.query("SELECT * FROM questions WHERE questionid = ?", [questionId])
+
+        const [answers] = await dbconnection.query("SELECT * FROM answers WHERE questionid = ?", [questionId])
+
+        if(!question){
+            res.status(StatusCodes.BAD_REQUEST).json({msg:"there is no any question!"})
+        }
+
+        return res.status(StatusCodes.OK).json({
+            questions: question,
+            answers: answers,
+        })
+    } catch (error) {
+        res.status(StatusCodes.BAD_REQUEST).json({msg:"Error at fetching question or answers"})
+    }
+}
+
+module.exports = {askQuestion, getQuestions, QuestionDetail}
