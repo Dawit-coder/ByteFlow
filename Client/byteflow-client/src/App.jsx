@@ -3,6 +3,7 @@ import Home from "./Pages/Home/Home";
 import AuthPage from "./Pages/AuthPage/AuthPage";
 import { createContext, useEffect, useState } from "react";
 import axios from "./axiosConfig";
+import QuestionDetail from "./Pages/QuestionDetail/QuestionDetail";
 
 export const Appstate = createContext();
 
@@ -33,6 +34,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<AuthPage defaultform="register" />} />
         <Route path="/login" element={<AuthPage defaultform="login" />} />
+        <Route path="/:questionId" element={<QuestionDetail/>} />   
       </Routes>
     </Appstate.Provider>
   );

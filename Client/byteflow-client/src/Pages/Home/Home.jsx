@@ -5,13 +5,17 @@ import Layout from '../../Components/Layout/Layout'
 import PersonPinIcon from '@mui/icons-material/PersonPin';
 import PopupModel from '../../Components/PopupModel/PopupModel'
 import axios from '../../axiosConfig'
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 
 function Home() {
   const { user } = useContext(Appstate)
   const [showPopup, setShowPopup] = useState(false);
   const [questions, setQuestions] = useState([]);
+  const navigate = useNavigate();
 
+  const handleQuestion = (questionid)=>{
+    navigate(`${questionid}`)
+  }
   useEffect(() => {
     const fetchQuestion = async () => {
       try {
@@ -22,7 +26,7 @@ function Home() {
           },
         })
         setQuestions(response.data.response);
-        console.log(response.data.response)
+        console.log(response.data.response, "this is the question in home page")
       } catch (error) {
         console.log("Error fetching data", error)
       }
@@ -39,7 +43,7 @@ function Home() {
       <div className={styles.questions_container}>
         <h1></h1>
         {questions.map((question) => (
-            <div key={question.id} className={styles.question_card}>
+            <div key={question.id} className={styles.question_card} onClick={()=>{handleQuestion(question.questionid)}}>
               <div className={styles.avatar}>
                 <h4>user</h4>
               </div>

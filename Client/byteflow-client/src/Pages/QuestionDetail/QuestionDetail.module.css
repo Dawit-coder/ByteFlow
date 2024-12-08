@@ -1,0 +1,21 @@
+.header{
+    position: relative;
+    margin: 7% 10% 0 5%;
+    background-color: aqua;
+}
+.header h1{
+    margin-bottom: 30px;
+}
+hr{
+    width: 50%;
+}
+.header h4{
+    margin-top: 20px;
+}
+.answer_container{
+    background-color: orange;
+    margin-top: 40px;
+}
+.answer_container h1{
+    text-align: center;
+}
