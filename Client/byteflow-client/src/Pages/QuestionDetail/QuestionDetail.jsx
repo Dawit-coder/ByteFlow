@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import axios from '../../axiosConfig'
 import { useParams } from 'react-router-dom';
 import styles from './QuestionDetail.module.css'
+import { Appstate } from '../../App';
 
 function QuestionDetail() {
-  const { questionId } = useParams();
+  const { user } = useContext(Appstate)
+  const { questionI } = useParams();
   const [question, setQuestion] = useState([]);
   const [answers, setAnswer] = useState([]);
   const [newAnswer, setNewAnswer] = useState("");
@@ -12,9 +14,6 @@ function QuestionDetail() {
   console.log(question, "this is question state")
   console.log(answers, "this is answers state")
 
-  const answerSubmit = () =>{
-
-  }
   useEffect(()=>{
     const questionAnswer = async() => {
       try {
@@ -38,7 +37,7 @@ function QuestionDetail() {
     e.preventDefault()
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.post("/questions/:questionId/answer", newAnswer, {
+      const response = await axios.post("/answer/:questionId", newAnswer, {
         headers:{
           Authorization:`Bearer ${token}`,
         }

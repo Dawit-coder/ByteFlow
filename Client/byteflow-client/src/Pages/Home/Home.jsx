@@ -12,7 +12,7 @@ function Home() {
   const [showPopup, setShowPopup] = useState(false);
   const [questions, setQuestions] = useState([]);
   const navigate = useNavigate();
-
+  console.log(user)
   const handleQuestion = (questionid)=>{
     navigate(`${questionid}`)
   }

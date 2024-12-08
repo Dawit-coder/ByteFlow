@@ -40,7 +40,7 @@ const QuestionDetail = async(req, res) => {
         const [answers] = await dbconnection.query("SELECT * FROM answers WHERE questionid = ?", [questionId])
 
         if(!question){
-            res.status(StatusCodes.BAD_REQUEST).json({msg:"there is no any question!"})
+            return res.status(StatusCodes.BAD_REQUEST).json({msg:"there is no any question!"})
         }
 
         return res.status(StatusCodes.OK).json({
