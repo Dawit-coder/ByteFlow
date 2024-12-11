@@ -35,18 +35,14 @@ function Home() {
     fetchQuestion();
   },[])
 
-  const addNewQuestion = (newQuestion)=>{
-    setQuestions((previousQuestion)=>[newQuestion, ...previousQuestion])
-  }
 
   return (
     <Layout>
-      { showPopup && <PopupModel onClose={()=>setShowPopup(false)}/> }
+      { showPopup && <PopupModel onClose={()=>setShowPopup(false)} /> }
       <div className={`${showPopup ? styles.blurred : ""}`}>
         <button onClick={()=>setShowPopup(true)} className={styles.question_btn}>Ask Question</button>
       </div>
       <div className={styles.questions_container}>
-        <h1></h1>
         {questions.map((question) => (
             <div key={question.id} className={styles.question_card} onClick={()=>{handleQuestion(question.questionid)}}>
               <div className={styles.avatar}>

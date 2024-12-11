@@ -13,7 +13,7 @@ const askQuestion = async (req, res) => {
     };
     try {
         await dbconnection.query("INSERT INTO questions (questionid, userid, title, description, tag) VALUES (?, ?, ?, ?, ?)", [questionid, userid, title, description, tag]);
-        return res.status(StatusCodes.CREATED).json({msg: "question asked successfully"})
+        return res.status(StatusCodes.CREATED).json({msg: "posted successfully"})
     } catch (error) {
         console.log("Database error", error)
         res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({msg: "Error ocured while asking question"})

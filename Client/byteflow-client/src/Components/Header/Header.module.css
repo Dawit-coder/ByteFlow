@@ -1,8 +1,7 @@
 .header_container{
-
-    /* background-color: #f7f3e9; */
-    background-color: #A6B1B7;
+    /* background-color: #A6B1B7; */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #333;
 }
 .inner_container{
     display: flex;
@@ -10,7 +9,7 @@
     justify-content: space-between;
     padding: 5px 20px;
 }
-.inner_container button{
+/* .inner_container button{
     position: relative;
     left: 23%;
     padding: 10px;
@@ -20,7 +19,7 @@
     color: #fff;
     border-radius: 10px;
     transition: .2 ease-in;
-}
+} */
 .inner_container button:hover{
     cursor: pointer;
     color: black;
@@ -36,7 +35,7 @@
 .nav{
     display: flex;
     gap: 50px;
-    padding-right: 70px;
+    /* padding-right: 70px; */
 }
 .nav a{
     color: black;

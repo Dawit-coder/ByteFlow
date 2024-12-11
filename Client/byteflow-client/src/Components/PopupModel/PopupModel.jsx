@@ -3,7 +3,7 @@ import styles from './PopupModel.module.css';
 import { X } from 'lucide-react';
 import axios from '../../axiosConfig';
 
-function PopupModel({ onClose, addNewQuestion }) {
+function PopupModel({ onClose }) {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [processing, setProcessing] = useState(false);
@@ -53,13 +53,10 @@ function PopupModel({ onClose, addNewQuestion }) {
           Authorization: `Bearer ${token}`,
         },
       });
-
-      // Update the questions list in the Home component
-      addNewQuestion(response.data);
-
-      alert('Posted successfully');
+      console.log(response, "this is the resp");
       setProcessing(false);
       onClose();
+      window.location.reload();
     } catch (err) {
       console.log('Error posting question', err);
       setProcessing(false);

@@ -59,7 +59,7 @@
     flex-direction: column;
     gap: 20px;
     padding: 10px 30px;
-    max-width: 70%;
+    max-width: 80%;
 }
 .content h2{
     font-size: 25px;
@@ -84,4 +84,33 @@
     width: 20px;
     background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
     pointer-events: none;
+}
+
+@media (max-width:1024px){
+    .question_card{
+        background-color: #11998E;
+        padding: 10px;
+        height: 60%;
+        font-size: 13px;
+        width: 100%;
+    }
+    .content{
+        width: 100%;
+        background-color: blueviolet;
+        font-size: 6px;
+        font-weight: 100;
+    }
+    .content h2{
+        font-size: 18px;
+        width: 100%;
+    }
+    .blurtitle{
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow-wrap: break-word;
+    }
+    .blurdescription{
+        display: none;
+    }
 }

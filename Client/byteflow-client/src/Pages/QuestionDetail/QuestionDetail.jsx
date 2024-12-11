@@ -14,6 +14,7 @@ function QuestionDetail() {
   const [question, setQuestion] = useState([]);
   const [answers, setAnswer] = useState([]);
   const [newAnswer, setNewAnswer] = useState("");
+  const [processing, setProcessing] = useState(false)
 
   console.log(question, "this is question state")
   console.log(answers, "this is answers state")
@@ -57,6 +58,7 @@ function QuestionDetail() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    setProcessing(true)
     try {
       const token = localStorage.getItem("token");
       const response = await axios.post("/answer/:questionId", newAnswer, {
@@ -65,9 +67,12 @@ function QuestionDetail() {
         },
       })
       console.log(response)
-      alert("you posted your answer successfully")
+      setProcessing(false)
+      window.location.reload();
+      // alert("you posted your answer successfully")
     } catch (error) {
       console.log(error, "error at posting data to the backend")
+      setProcessing(true)
     };
   };
 
@@ -115,7 +120,9 @@ function QuestionDetail() {
             <div className={styles.answer_input_container}>
               <form onSubmit={handleSubmit}>
                 <textarea placeholder='Write your answer here' onChange={handleTyping} required></textarea>
-                <button type='submit' className={styles.btn}>Post Answer</button>
+                <button type='submit' className={styles.btn}>
+                  {processing ? <p>Posting ...</p>:"Post Answer"}
+                </button>
               </form>
             </div>
           </div>
