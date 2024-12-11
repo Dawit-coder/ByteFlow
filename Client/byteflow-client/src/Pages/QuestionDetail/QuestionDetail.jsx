@@ -109,7 +109,7 @@ function QuestionDetail() {
                 ))
 
               ) : (
-                <p>No answer yet.</p>
+                <p className={styles.noquestion}>No answer yet.</p>
               )}
             </div>
             <div className={styles.answer_input_container}>

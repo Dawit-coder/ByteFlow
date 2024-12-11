@@ -11,7 +11,7 @@ function Footer() {
           <a href="https://www.linkedin.com/in/dawitteshome/" target='blank'><LinkedInIcon/></a>
       </div>
       <div className={styles.copyright}>
-        <p>&copy; {new Date().getFullYear()} ByteFlow Forum. All Rights Reserved.</p>
+        <p> &copy; {new Date().getFullYear()} ByteFlow Forum. All Rights Reserved.</p>
       </div>
     </footer>
   )

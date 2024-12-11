@@ -6,6 +6,7 @@ import PersonPinIcon from '@mui/icons-material/PersonPin';
 import PopupModel from '../../Components/PopupModel/PopupModel'
 import axios from '../../axiosConfig'
 import { Link, Navigate, useNavigate } from 'react-router-dom';
+import PersonIcon from '@mui/icons-material/Person';
 
 function Home() {
   const { user } = useContext(Appstate)
@@ -33,11 +34,15 @@ function Home() {
     }
     fetchQuestion();
   },[])
+
+  const addNewQuestion = (newQuestion)=>{
+    setQuestions((previousQuestion)=>[newQuestion, ...previousQuestion])
+  }
+
   return (
     <Layout>
       { showPopup && <PopupModel onClose={()=>setShowPopup(false)}/> }
       <div className={`${showPopup ? styles.blurred : ""}`}>
-        <h2>Home page</h2>
         <button onClick={()=>setShowPopup(true)} className={styles.question_btn}>Ask Question</button>
       </div>
       <div className={styles.questions_container}>
@@ -45,11 +50,12 @@ function Home() {
         {questions.map((question) => (
             <div key={question.id} className={styles.question_card} onClick={()=>{handleQuestion(question.questionid)}}>
               <div className={styles.avatar}>
-                <h4>user</h4>
+                <PersonIcon/>
+                <h4>{user.username}</h4>
               </div>
               <div className={styles.content}>
-                <h2>{question.title}</h2>
-                <p>{question.description}</p>
+                <h2 className={styles.blurtitle}>{question.title}</h2>
+                <p className={styles.blurdescription}>{question.description}</p>
               </div>
             </div>
         ))}

@@ -33,7 +33,7 @@ app.use("/api/questions", authMiddleware, questionRoutes)
 
 //answer Route middleware file
 
-app.use("api/answer", authMiddleware, answerRouter)
+app.use("/api/answer", authMiddleware, answerRouter)
 
 
 async function start(){
