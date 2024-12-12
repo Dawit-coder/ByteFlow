@@ -14,7 +14,7 @@ const answerQuestion = async(req, res) =>{
         return res.status(StatusCodes.OK).json({msg:"answer posted successully"})
     } catch (error) {
         res.status(StatusCodes.BAD_REQUEST).json({msg:"error at posting answer to db", error})
-        console.log(questionid, answer, userid)
+        console.log(questionId, answer, userid)
     }
 }
 

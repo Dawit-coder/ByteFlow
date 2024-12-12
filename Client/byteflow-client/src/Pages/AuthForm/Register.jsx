@@ -34,7 +34,7 @@ function Register() {
         password: passwordvalue,
       })
       alert("registered successfully")
-      navigate("/login")
+      navigate("/")
     } catch (error) {
       alert('something went wrong')
       console.log(error)

@@ -9,15 +9,12 @@ import PersonIcon from '@mui/icons-material/Person';
 
 function QuestionDetail() {
   const { user } = useContext(Appstate)
-  console.log(user, "user conole")
+  console.log(user , "user consoled")
   const { questionId } = useParams();
   const [question, setQuestion] = useState([]);
   const [answers, setAnswer] = useState([]);
   const [newAnswer, setNewAnswer] = useState("");
   const [processing, setProcessing] = useState(false)
-
-  console.log(question, "this is question state")
-  console.log(answers, "this is answers state")
 
   const token = localStorage.getItem("token");
   useEffect(()=>{
@@ -38,6 +35,7 @@ function QuestionDetail() {
     questionAnswer();
   }, [questionId]);
 
+  //Fetch the question
   useEffect(()=>{
     const fetchAnswer = () => {
       try {
@@ -56,12 +54,17 @@ function QuestionDetail() {
     fetchAnswer()
   }, [questionId])
 
+  //Handle the answer
   const handleSubmit = async (e) => {
     e.preventDefault()
     setProcessing(true)
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.post("/answer/:questionId", newAnswer, {
+      const payload = {
+        answer: newAnswer, 
+        userid: user.userid,
+      }
+  const response = await axios.post(`/answer/${questionId}`, payload, {
         headers:{
           Authorization:`Bearer ${token}`,
         },
@@ -69,10 +72,8 @@ function QuestionDetail() {
       console.log(response)
       setProcessing(false)
       window.location.reload();
-      // alert("you posted your answer successfully")
     } catch (error) {
       console.log(error, "error at posting data to the backend")
-      setProcessing(true)
     };
   };
 
