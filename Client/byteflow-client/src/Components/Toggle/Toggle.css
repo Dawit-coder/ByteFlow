@@ -1,0 +1,54 @@
+.toggle-container{
+    /* background-color: aqua; */
+    position: absolute;
+    top: 38px;
+    right: 1.2em;
+}
+.toggle{
+    visibility: hidden;
+}
+
+.toggle + label {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: silver;
+}
+.toggle + label::before{
+    content: "";
+    height: 1.1em;
+    width: 2.2em;
+    border-radius: 1em;
+    margin-right: 2em;
+    background-color: var(--toggle-bg);
+    margin-right: 0.5em;
+    transition: background-color 250ms ease-in-out;
+}
+.toggle + label::after{
+    content: "";
+    height: 0.9em;
+    width: 0.9em;
+    border-radius: 1em;
+    background-color: var(--toggle-fg);
+    position: absolute;
+    left: 0.2em;
+}
+.toggle:checked + label::after{
+    transform: translateX(100%);
+}
+svg{
+    pointer-events: none;
+    position: relative;
+    top: -24px;
+    left: 4px;
+    width: 20px;
+}
+.sun{
+    color: var(--toggle-fg);
+    margin-right: 5px;
+}
+.moon{
+    color: #e0e0e0;
+    size: 10px;
+}

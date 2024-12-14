@@ -67,7 +67,7 @@ function PopupModel({ onClose }) {
     <div className={styles.container}>
       <div className={styles.popup_container}>
         <button onClick={onClose} className={styles.close_btn}>
-          <X size={30} />
+          <X size={40} />
         </button>
         <h3>Post Your Question</h3>
         <div className={styles.input}>

@@ -2,10 +2,11 @@
     position: relative;
     display: inline-block;
     margin: 4% 10% 0 5%;
+    margin-top: 70px;
 }
 .header h1{
     margin-bottom: 30px;
-    color: #333;
+    color: var(--primary-text-color);
     font-size: 30px;
     font-weight: bolder;
 }
@@ -21,10 +22,10 @@ hr{
 }
 .arrow{
     position: absolute;
-    color: #555;
+    color: var(--primary-text-color);
     font-size: 30px;
-    left: -50px;
-    top: -17px;
+    left: -45px;
+    top: 6px;
     font-size: 25px;
     margin: 20px auto;
     transform: transform 0.4s ease;
@@ -36,12 +37,12 @@ hr{
     0%, 100% {
       transform: translateX(0);
     }
-    50% {
-      transform: translateX(-10px);
+    100% {
+      transform: translateX(-30px);
     }
   }
 .answer_container{
-    /* background-color: orange; */
+
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -81,7 +82,7 @@ hr{
     position: relative;
     padding-left: 30px;
     width: 10%;
-    left: 5%;
+    left: 3%;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -89,6 +90,10 @@ hr{
     align-items: center;
     text-align: center;
     margin-left: -50px;
+}
+.user :nth-child(1){
+    margin-top: 25px;
+    margin-bottom: -25px;
 }
 .answer{
     position: absolute;
@@ -99,11 +104,12 @@ hr{
     box-sizing: border-box;
 }
 .answer p{
+    padding: 10px;
     margin: 0;
 }
 .answers_section p{
     padding: 10px 0;
-    color: #333;
+    color: var(--primary-text-color);
     text-align: center;
     font-style: italic;
 }
