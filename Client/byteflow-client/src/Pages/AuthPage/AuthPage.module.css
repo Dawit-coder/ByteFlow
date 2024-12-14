@@ -4,6 +4,7 @@
     /* color: #fff; */
 }
 .left_side{
+    position: relative;
     background-image: url(../../img/background.jpg);
     border-top-right-radius: 5px;
     border-bottom-right-radius: 20px;
@@ -21,6 +22,7 @@
     left: 70px;
     font-size: 30px;
     color: #FFF5E1;
+    margin-bottom: 30px;
 }
 .left_side .dot{
     display: inline-block;
@@ -28,7 +30,7 @@
     font-size: 50px;
 }
 .about{
-    height: 40vh;
+    min-height: 40vh;
     position: relative;
     top: 6%;
     display: flex;
@@ -42,12 +44,20 @@
     font-weight: 500;
     line-height: 1.2em;
     color: #1c1c1c;
+    gap: 120px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 5);
 }
-.about :nth-child(1){
+.about h3{
     font-size: 28px;
+    font-style: italic;
     text-align: start;
     left: 15px;
     margin: 10px 0 20px;  
+    margin-bottom: 40px;
+}
+.about p{
+    word-wrap: break-word;
+    padding-top: 15px;
 }
 .right_side{
     width: 50%;
@@ -93,4 +103,28 @@
 }
 .register_slide div:last-child{
     width: 100%;
+}
+
+@media (max-width: 768px) {
+    .section {
+        flex-direction: column; /* Change layout to column when the screen size is smaller */
+    }
+    .left_side .about{
+        margin-top: 20%;
+    }
+    .about h3{
+        padding-bottom: 10px;
+    }
+    .about p{
+        word-wrap: break-word;
+        padding-top: 10%;
+    }
+    .left_side, .right_side {
+        width: 100%; /* Ensure both sides take full width */
+    }
+}
+@media (max-width:1440px) {
+    .about p{
+        padding-top: 8%;
+    }
 }
