@@ -36,13 +36,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 192, 192, 0.4); 
+    background: rgba(60, 60, 60, 0.4); 
     border-radius: 10px;
     margin: 50px;
     padding: 15px;
     font-size: 18px;
     font-weight: 500;
-    line-height: 1.2em;
+    line-height: 1.6em;
     color: #1c1c1c;
     gap: 120px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 5);
@@ -56,8 +56,12 @@
     margin-bottom: 40px;
 }
 .about p{
+    font-style: oblique;
     word-wrap: break-word;
     padding-top: 15px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    color: #fff;
 }
 .right_side{
     width: 50%;
@@ -98,9 +102,6 @@
     text-decoration: underline;
     cursor: pointer;
 }
-.slide_login{
-
-}
 .register_slide div:last-child{
     width: 100%;
 }
@@ -120,7 +121,7 @@
         padding-top: 10%;
     }
     .left_side, .right_side {
-        width: 100%; /* Ensure both sides take full width */
+        width: 100%; 
     }
 }
 @media (max-width:1440px) {
