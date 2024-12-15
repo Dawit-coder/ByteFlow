@@ -43,7 +43,7 @@ async function start(){
         console.log("database connection established")
         console.log(`listening on port ${port}`)
     } catch (error) {
-        console.log(error.message)       
+        console.log(error.message, error)       
     }
 }
 start();
