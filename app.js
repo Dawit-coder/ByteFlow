@@ -1,5 +1,6 @@
 const express = require('express');
 require("dotenv").config()
+
 const app = express();
 
 const port = process.env.PORT || 3000;
@@ -36,7 +37,7 @@ app.use("/api/questions", authMiddleware, questionRoutes)
 app.use("/api/answer", authMiddleware, answerRouter)
 
 
-async function start(){
+async function start() {
     console.log("it is from start function")
     try {
         const result = await dbconnection.execute("select 'test' ")
@@ -44,8 +45,7 @@ async function start(){
         console.log("database connection established")
         console.log(`listening on port ${port}`)
     } catch (error) {
-        console.log(error)       
-        console.log(error.stack)
+        console.log('error at connecting to the database', error)       
     }
 }
 start();
