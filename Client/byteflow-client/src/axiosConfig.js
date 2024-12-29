@@ -1,7 +1,7 @@
 import axios, { Axios } from 'axios';
 
 const axiosBase = axios.create({
-    baseURL: "http://localhost:5000/api"
+    baseURL: "https://byteflow-production.up.railway.app/api"
 })
 
 export default axiosBase

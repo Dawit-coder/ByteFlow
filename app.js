@@ -7,7 +7,7 @@ const port = process.env.MYSQL_PORT || 3000;
 
 const cors = require('cors')
 
-app.use(cors())
+app.use(cors( {origin: "*"}))
 
 //db connection
 const dbconnection = require("./db/dbConfig")

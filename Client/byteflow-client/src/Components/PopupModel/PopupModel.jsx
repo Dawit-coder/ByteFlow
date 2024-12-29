@@ -59,7 +59,7 @@ function PopupModel({ onClose }) {
       window.location.reload();
     } catch (err) {
       console.log('Error posting question', err);
-      setProcessing(false);
+      setProcessing(true);
     }
   };
 
@@ -87,7 +87,7 @@ function PopupModel({ onClose }) {
             placeholder="Describe your question in more detail"
           />
         </div>
-        {lengthError && <p style={{color:'red'}}>{lengthError}</p>}
+        {lengthError && <p style={{color:'red'}}> {lengthError} </p>}
         <button className={styles.post_btn} onClick={handlePost}>
           {processing ? <p>Posting ...</p> : 'Post Question'}
         </button>

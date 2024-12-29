@@ -1,7 +1,6 @@
 .section{
     display: flex;
     min-height: 100vh;
-    /* color: #fff; */
 }
 .left_side{
     position: relative;

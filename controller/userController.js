@@ -47,7 +47,7 @@ async function login(req, res){
         //Compare the provided password with the stored hashed password 
         const isMatch = await bcrypt.compare(password, user[0].password);
         if (!isMatch){
-            return res.status(StatusCodes.BAD_REQUEST).json({ msg:" invalid credential " })
+            return res.status(StatusCodes.BAD_REQUEST).json({ msg:"invalid credential" })
         }
 
         const username = user[0].username;

@@ -1,5 +1,4 @@
 .toggle-container{
-    /* background-color: aqua; */
     position: absolute;
     top: 38px;
     right: 1.2em;
@@ -13,7 +12,6 @@
     align-items: center;
     font-size: 1.5em;
     cursor: pointer;
-    color: silver;
 }
 .toggle + label::before{
     content: "";
