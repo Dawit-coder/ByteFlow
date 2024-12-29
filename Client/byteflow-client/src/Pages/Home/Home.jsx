@@ -64,7 +64,7 @@ function Home() {
             >
               <div className={styles.avatar}>
                 <PersonIcon />
-                <h4>{user.username}</h4>
+                <h4>{question.username}</h4>
               </div>
               <div className={styles.content}>
                 <h2 className={styles.blurtitle}>{question.title}</h2>

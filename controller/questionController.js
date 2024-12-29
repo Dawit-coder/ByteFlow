@@ -12,7 +12,7 @@ const askQuestion = async (req, res) => {
         return res.status(StatusCodes.BAD_REQUEST).json({msg:"please provide the required field"})
     };
     try {
-        await dbconnection.query("INSERT INTO questions (questionid, userid, title, description, tag) VALUES (?, ?, ?, ?, ?)", [questionid, userid, title, description, tag]);
+        await dbconnection.query("INSERT INTO questions (questionid, userid, username, title, description, tag) VALUES (?, ?, ?, ?, ?)", [questionid, userid, username, title, description, tag]);
         return res.status(StatusCodes.CREATED).json({msg: "posted successfully"})
     } catch (error) {
         console.log("Database error", error)
@@ -23,7 +23,7 @@ const askQuestion = async (req, res) => {
 const getQuestions = async (req, res) => {
 
     try {
-        const [response] = await dbconnection.query("SELECT id, questionid, userid, title, description FROM questions ORDER BY id DESC");
+        const [response] = await dbconnection.query("SELECT id, questionid, userid, title, description, username FROM questions ORDER BY id DESC");
         console.log(response)
         return res.status(StatusCodes.OK).json({response})
     } catch (error) {
@@ -37,7 +37,7 @@ const QuestionDetail = async(req, res) => {
     try {
         const [question] = await dbconnection.query("SELECT * FROM questions WHERE questionid = ?", [questionId])
 
-        const [answers] = await dbconnection.query("SELECT * FROM answers WHERE questionid = ?", [questionId])
+        const [answers] = await dbconnection.query("SELECT answer, username FROM answers WHERE questionid = ?", [questionId])
 
         if(!question){
             return res.status(StatusCodes.BAD_REQUEST).json({msg:"there is no any question!"})

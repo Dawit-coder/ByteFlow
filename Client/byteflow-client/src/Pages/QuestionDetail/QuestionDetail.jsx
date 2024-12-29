@@ -63,6 +63,7 @@ function QuestionDetail() {
       const payload = {
         answer: newAnswer, 
         userid: user.userid,
+        username: user.username,
       }
   const response = await axios.post(`/answer/${questionId}`, payload, {
         headers:{
@@ -106,7 +107,7 @@ function QuestionDetail() {
                   <div className={styles.answer_card} key={answer.key}>
                     <div className={styles.user}>
                       <PersonIcon style={{fontSize:40}}/>
-                      <p>{user.username}</p>
+                      <p>{answer.username}</p>
                     </div>
                     <div className={styles.answer}>
                       <p>{answer?.answer}</p>
